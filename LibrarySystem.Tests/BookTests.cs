@@ -23,7 +23,7 @@ namespace LibrarySystem.Tests
         public void IsAvailable_ShouldBeTrueForNewBook()
         {
             // Arrange
-            var book = new Book("123", "Ny bok", "Någon", 2020);
+            var book = new Book("1234", "Ny bok", "Någon", 2020);
 
             // Act & Assert
             Assert.True(book.IsAvailable);
@@ -33,7 +33,7 @@ namespace LibrarySystem.Tests
         public void GetInfo_ShouldReturnFormattedString()
         {
             // Arrange
-            var book = new Book("123", "Vindsträdgården", "Virginia C. Andrews", 1981);
+            var book = new Book("1234", "Vindsträdgården", "Virginia C. Andrews", 1981);
 
             // Act
             var info = book.GetInfo();
@@ -42,7 +42,7 @@ namespace LibrarySystem.Tests
             Assert.Contains("Vindsträdgården", info);
             Assert.Contains("Virginia C. Andrews", info);
             Assert.Contains("1981", info);
-            Assert.Contains("ISBN: 123", info);
+            Assert.Contains("ISBN: 1234", info);
             Assert.Contains("Available", info);
         }
     }
