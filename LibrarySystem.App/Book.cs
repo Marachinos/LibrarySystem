@@ -12,10 +12,10 @@ public class Book : ISearchable
 
     public Book(string isbn, string title, string author, int publishedYear)
     {
-        if (string.IsNullOrWhiteSpace(isbn)) throw new ArgumentException("ISBN is required.", nameof(isbn));
-        if (string.IsNullOrWhiteSpace(title)) throw new ArgumentException("Title is required.", nameof(title));
-        if (string.IsNullOrWhiteSpace(author)) throw new ArgumentException("Author is required.", nameof(author));
-        if (publishedYear <= 0) throw new ArgumentOutOfRangeException(nameof(publishedYear), "PublishedYear must be positive.");
+        if (string.IsNullOrWhiteSpace(isbn)) throw new ArgumentException("ISBN är obligatorisk.", nameof(isbn));
+        if (string.IsNullOrWhiteSpace(title)) throw new ArgumentException("Titel är obligatorisk.", nameof(title));
+        if (string.IsNullOrWhiteSpace(author)) throw new ArgumentException("Författare är obligatorisk.", nameof(author));
+        if (publishedYear <= 0) throw new ArgumentOutOfRangeException(nameof(publishedYear), "Publiceringsåret måste vara ett år högre än 0.");
 
         ISBN = isbn;
         Title = title;
