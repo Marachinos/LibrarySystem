@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 
-//required betyder nödvändig = Not to my self 
-
 namespace LibrarySystem.App
 {
     public class Book : ISearchable
@@ -16,10 +14,10 @@ namespace LibrarySystem.App
 
         public Book(string isbn, string title, string author, int publishedYear)
         {
-            if (string.IsNullOrWhiteSpace(isbn)) throw new ArgumentException("ISBN is required.", nameof(isbn));
-            if (string.IsNullOrWhiteSpace(title)) throw new ArgumentException("Title is required.", nameof(title));
-            if (string.IsNullOrWhiteSpace(author)) throw new ArgumentException("Author is required.", nameof(author));
-            if (publishedYear <= 0) throw new ArgumentOutOfRangeException(nameof(publishedYear), "PublishedYear must be positive.");
+            if (string.IsNullOrWhiteSpace(isbn)) throw new ArgumentException("ISBN är obligatorisk.", nameof(isbn));
+            if (string.IsNullOrWhiteSpace(title)) throw new ArgumentException("Titel är obligatorisk.", nameof(title));
+            if (string.IsNullOrWhiteSpace(author)) throw new ArgumentException("Författare är obligatorisk.", nameof(author));
+            if (publishedYear <= 0) throw new ArgumentOutOfRangeException(nameof(publishedYear), "Publiceringsåret måste vara positivt.");
 
             ISBN = isbn;
             Title = title;
@@ -29,7 +27,7 @@ namespace LibrarySystem.App
         }
 
         public string GetInfo()
-            => $"{Title} by {Author} ({PublishedYear}) - ISBN: {ISBN} - {(IsAvailable ? "Available" : "On loan")}";
+            => $"{Title} av {Author} ({PublishedYear}) - ISBN: {ISBN} - {(IsAvailable ? "Tillgänglig" : "Utlånad")}";
 
         // För LoanManager senare:
         public void MarkAsBorrowed() => IsAvailable = false;

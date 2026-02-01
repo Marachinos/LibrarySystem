@@ -19,10 +19,10 @@ namespace LibrarySystem.App
 
         public Member(string memberId, string name, string email, DateTime? memberSince = null)
         {
-            if (string.IsNullOrWhiteSpace(memberId)) throw new ArgumentException("MemberId is required.", nameof(memberId));
-            if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name is required.", nameof(name));
-            if (string.IsNullOrWhiteSpace(email)) throw new ArgumentException("Email is required.", nameof(email));
-            if (!email.Contains('@')) throw new ArgumentException("Email must contain '@'.", nameof(email));
+            if (string.IsNullOrWhiteSpace(memberId)) throw new ArgumentException("MedlemsId är obligatoriskt.", nameof(memberId));
+            if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Namn är obligatoriskt.", nameof(name));
+            if (string.IsNullOrWhiteSpace(email)) throw new ArgumentException("E-mail är obligatoriskt.", nameof(email));
+            if (!email.Contains('@')) throw new ArgumentException("E-mail måste innehålla '@'.", nameof(email));
 
             MemberId = memberId;
             Name = name;
@@ -31,14 +31,14 @@ namespace LibrarySystem.App
         }
 
         public string GetInfo() //Metod för medlemsinfo
-        => $"{Name} ({MemberId}) - {Email} - Member since: {MemberSince:yyyy-MM-dd} - Borrowed: {_borrowedBooks.Count}";
+        => $"{Name} ({MemberId}) - {Email} - Medlem sedan: {MemberSince:yyyy-MM-dd} - Lånat: {_borrowedBooks.Count}";
 
-        // Dessa används av LoanManager senare (inte publikt "fritt fram" att ändra listan)
+        //Dessa används av LoanManager senare (inte publikt "fritt fram" att ändra listan)
         public void AddBorrowedBook(Book book)
         {
             if (book is null) throw new ArgumentNullException(nameof(book));
             if (_borrowedBooks.Any(b => b.ISBN == book.ISBN))
-                throw new InvalidOperationException("Book already borrowed by this member.");
+                throw new InvalidOperationException("Boken är redan lånad av den här medlemmen.");
 
             _borrowedBooks.Add(book);
         }
@@ -49,7 +49,7 @@ namespace LibrarySystem.App
 
             var removed = _borrowedBooks.Remove(book);
             if (!removed)
-                throw new InvalidOperationException("Book was not borrowed by this member.");
+                throw new InvalidOperationException("Boken var inte lånad av den här medlemmen.");
         }
     }
 }
