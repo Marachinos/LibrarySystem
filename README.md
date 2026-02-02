@@ -20,13 +20,13 @@ Fokus: inkapsling, komposition, interface (ISearchable), sök/sortering/statisti
   - Beräknade properties: `IsOverdue`, `IsReturned`
   - Return() för återlämning
 
-- **Komposition (Del 2)**
+- **Komposition**
   - Library innehåller:
     - BookCatalog (böcker)
     - MemberRegistry (medlemmar)
     - LoanManager (utlåning + historik)
 
-- **Algoritmer (Del 4)**
+- **Algoritmer**
   - Sök (titel/författare/ISBN)
   - Sortering (titel eller utgivningsår)
   - Statistik: totalt antal böcker, antal utlånade, mest aktiv låntagare
@@ -36,15 +36,20 @@ Fokus: inkapsling, komposition, interface (ISearchable), sök/sortering/statisti
 - LibrarySystem.App – konsolapp och domänklasser
 - LibrarySystem.Tests – xUnit-tester
 
-## Köra programmet
+## Designval 
+
+- Inkapsling: interna listor exponeras som IReadOnlyList och förändras via metoder.
+- Komposition: Library fungerar som en facade för katalog/medlemsregister/utlåning.
+- Robusthet: valideringar och undantag vid fel (t.ex. dubbla ISBN, låna otillgänglig bok).
+- Teststrategi (NegativeAndEdgeCaseTests): AAA-mönster, både happy path och negativa/edge-case tester, samt [Theory] för parametriserade testfall.
+
+## Köra programmet & Tester
 
 ```bash
 dotnet run --project LibrarySystem.App
 
-## Köra tester
-
+- Köra tester:
 dotnet test
 
-## Designval
 
 
