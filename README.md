@@ -41,6 +41,7 @@ Fokus: inkapsling, komposition, interface (ISearchable), sök/sortering/statisti
 - Inkapsling: interna listor exponeras som IReadOnlyList och förändras via metoder.
 - Komposition: Library fungerar som en facade för katalog/medlemsregister/utlåning.
 - Robusthet: valideringar och undantag vid fel (t.ex. dubbla ISBN, låna otillgänglig bok).
+- Valde alternativ B.
 - Teststrategi (NegativeAndEdgeCaseTests): AAA-mönster, både happy path och negativa/edge-case tester, samt [Theory] för parametriserade testfall.
 
 ## Köra programmet & Tester
