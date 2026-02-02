@@ -44,12 +44,12 @@ Fokus: inkapsling, komposition, interface (ISearchable), sök/sortering/statisti
 - Valde alternativ B.
 - Teststrategi (NegativeAndEdgeCaseTests): AAA-mönster, både happy path och negativa/edge-case tester, samt [Theory] för parametriserade testfall.
 
-## Köra programmet & Tester
+## Köra programmet
 
-```bash
 dotnet run --project LibrarySystem.App
 
-- Köra tester:
+## Köra tester:
+
 dotnet test
 
 
