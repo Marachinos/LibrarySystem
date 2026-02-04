@@ -75,7 +75,9 @@ internal class Program
 
     private static void PrintMenu()
     {
-        Console.WriteLine("=== Bibliotekssystem ===");
+        Console.WriteLine("================");
+        Console.WriteLine("Bibliotekssystem");
+        Console.WriteLine("================");
         Console.WriteLine();
         Console.WriteLine("1. Visa alla böcker");
         Console.WriteLine("2. Sök bok");
