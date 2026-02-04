@@ -25,7 +25,13 @@ public class Book : ISearchable
     }
 
     public string GetInfo()
-        => $"{Title} by {Author} ({PublishedYear}) - ISBN: {ISBN} - {(IsAvailable ? "Available" : "Borrowed")}";
+    {
+        var status = IsAvailable ? "Tillgänglig" : "Utlånad";
+
+        return $"\"{Title}\" av {Author} ({PublishedYear}) - ISBN: {ISBN} - {status}";
+    }
+    //public string GetInfo()
+    //    => $"{Title} by {Author} ({PublishedYear}) - ISBN: {ISBN} - {(IsAvailable ? "Available" : "Borrowed")}";
 
     // För LoanManager:
     public void MarkAsBorrowed() => IsAvailable = false;

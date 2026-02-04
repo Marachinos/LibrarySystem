@@ -39,10 +39,10 @@ public class BookTests
         var info = book.GetInfo();
 
         // Assert
-        Assert.Contains("Sagan", info);
-        Assert.Contains("Författaren", info);
-        Assert.Contains("1999", info);
+        Assert.Contains("\"Sagan\"", info);
+        Assert.Contains("av Författaren", info);
+        Assert.Contains("(1999)", info);
         Assert.Contains("ISBN: 123", info);
-        Assert.Contains("Available", info);
+        Assert.Contains("Tillgänglig", info);
     }
 }
