@@ -43,6 +43,7 @@ Fokus: inkapsling, komposition, interface (ISearchable), sök/sortering/statisti
 - Robusthet: valideringar och undantag vid fel (t.ex. dubbla ISBN, låna otillgänglig bok).
 - Valde alternativ B.
 - Teststrategi (NegativeAndEdgeCaseTests): AAA-mönster, både happy path och negativa/edge-case tester, samt [Theory] för parametriserade testfall.
+- Testet speglade ett tidigare krav där presentationen var på engelska. När kravet ändrades till svenska uppdaterades testet för att verifiera det nya, korrekta beteendet. Detta är ett exempel på hur tester fungerar som levande dokumentation av systemets krav.
 
 ## Köra programmet
 
